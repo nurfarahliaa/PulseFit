@@ -5,6 +5,7 @@
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color-scheme: light;
 }
+}
 
 html, body {
   height: 100%;
@@ -15,52 +16,54 @@ html, body {
 body {
   font-family: inherit;
   background-color: var(--bg);
-  color: #f8f9fa; 
+  color: #222;
+  color: #f8f9fa; /* teks putih cerah */
   line-height: 1.45;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* Warna kategori */
+  /* Jadual aktiviti - warna lembut dan mudah dibaca */
 .yoga {
-  background-color: #CDE8C9; 
+  background-color: #CDE8C9; /* pastel hijau */
   color: #2e3b2e;
   font-weight: 600;
 }
 
 .zumba {
-  background-color: #FFF3B0; 
+  background-color: #FFF3B0; /* kuning lembut */
   color: #4b3e00;
   font-weight: 600;
 }
 
 .hiit {
-  background-color: #FFD6A5; 
+  background-color: #FFD6A5; /* oren lembut */
   color: #5a2c00;
   font-weight: 600;
 }
 
 .pt {
-  background-color: #A0C4FF; 
+  background-color: #A0C4FF; /* biru lembut */
   color: #002b5b;
   font-weight: 600;
 }
 
 .opengym {
-  background-color: #FFADAD; 
+  background-color: #FFADAD; /* merah jambu lembut */
   color: #5a0000;
   font-weight: 600;
 }
 
-/* Table style */
+/* tambahan opsyenal: border cantik */
 table td, table th {
   text-align: center;
   vertical-align: middle;
   border: 1px solid #ddd;
 }
 
-/* Flex fill */
+
+}
+
+
 main {
   flex: 1;
 }
@@ -76,6 +79,11 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
   outline-offset: 3px;
 }
 
+/* Table style */
+.table td, .table th {
+  vertical-align: middle;
+}
+
 /* Cards on small screens */
 @media (max-width: 576px) {
   .card .btn { width: 100%; }
@@ -89,9 +97,6 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 /* Footer style */
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   background-color: #1e2226;
   color: white;
   width: 100%;
@@ -107,15 +112,11 @@ footer a {
 footer a:hover {
   color: #4da6ff;
 }
-section:last-of-type {
-  margin-bottom: 0;
-}
 /* Kad asas */
 .card {
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
 }
 
 /* 1️ Yoga – pastel hijau */
@@ -136,29 +137,39 @@ section:last-of-type {
   color: #000;
 }
 
-/* Hover effect */
+/* Kesan hover untuk kesemua kad */
 .card:hover {
   transform: translateY(-3px);
+  transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.yoga-card:hover { background-color: #bfe1bb; }
+  .yoga-card:hover { background-color: #bfe1bb; }
 .zumba-card:hover { background-color: #ffe985; }
 .pt-card:hover { background-color: #dcdcdc; }
 
-/* Carousel image resize */
-#trainerCarousel img {
-  max-height: 400px;
-  width: auto;
-  object-fit: contain;
-  margin: 0 auto;
 }
-  .table-bordered, 
-  .table-bordered th, 
-  .table-bordered td {
-    border: 3px solid black !important; /* semua garisan sama tebal */
-  }
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg shadow-sm"
+     style="background-color: #CDE8C9; border-radius: 15px; margin: 15px; padding: 8px 15px;"
+     aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <i class="bi bi-heart-pulse-fill fs-3 text-primary me-2" aria-hidden="true"></i>
+      <span class="fw-bold">PulseFit Studio</span>
+    </a>
 
-  .table {
-    border-collapse: collapse !important; /* supaya border tak double */
-  }
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+            aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navmenu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link fw-semibold text-dark" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold text-dark" href="trainers.html">Trainers</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold text-dark" href="schedule.html">Schedule</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold text-dark" href="register.html">Trial Class</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold text-dark" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
